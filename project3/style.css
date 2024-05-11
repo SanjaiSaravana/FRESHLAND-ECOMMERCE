@@ -1,0 +1,271 @@
+body, h1, h2, h3, p, button {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif; 
+    background-color: #f5f5f5; 
+}
+
+
+.identity {
+    text-align: center;
+    padding: 20px 0;
+    background-color: #4caf50;; 
+    color: white; 
+    font-size: 24px;
+    animation: fadeInDown 1s ease-out;
+}
+
+
+
+
+button {
+    background-color: #fff; 
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #f0f0f0; 
+}
+
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+
+section {
+    background-color: #fff; 
+    margin: 20px 0;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    animation: slideInUp 1s ease-out;
+}
+
+
+.bigbox {
+    text-align: center;
+}
+
+.userinputs {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.box1 {
+    margin-right: 20px;
+}
+
+.introcontent, .mission, .wideproduct, .quality, .experience, .onlineshipping {
+    text-align: justify;
+}
+
+.shop-section {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    animation: fadeIn 1s ease-out;
+}
+
+.shop1btn {
+    background-color: #4caf50;
+    color: white; 
+    transition: background-color 0.3s ease;
+}
+
+.shop1btn:hover {
+    background-color: #45a049; 
+}
+
+
+footer {
+    background-color: #333; 
+    color: white; 
+    text-align: center;
+    padding: 20px 0;
+    animation: slideInUp 1s ease-out;
+}
+
+.endbox {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+
+a {
+    color: white; 
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+
+@keyframes slideInDown {
+    from {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInDown {
+    from {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideInUp {
+    from {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+
+
+section {
+    background-color: #fff; 
+    margin: 20px 0;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    animation: slideInUp 1s ease-out;
+    transition: transform 0.3s ease; 
+}
+
+
+section:hover {
+    transform: translateY(-5px); 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+}
+
+
+.userinputs {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    animation: fadeIn 1s ease-out;
+}
+
+.userinputs input[type="text"],
+.userinputs button {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    margin: 0 10px;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+}
+
+.userinputs input[type="text"] {
+    background-color: #f0f0f0; 
+    width: 200px;
+}
+
+.userinputs input[type="text"]:focus {
+    background-color: #e0e0e0; 
+}
+
+.userinputs button {
+    background-color: #4caf50; 
+    color: white; 
+    cursor: pointer;
+}
+
+.userinputs button:hover {
+    background-color: #45a049;
+    transform: translateY(-2px); 
+}
+
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+
+.userinputs {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    animation: fadeIn 1s ease-out;
+}
+
+.userinputs input[type="text"],
+.userinputs input[type="password"],
+.userinputs button {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    margin: 0 10px;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+}
+
+.userinputs input[type="text"],
+.userinputs input[type="password"] {
+    background-color: #f0f0f0;
+    width: 200px;
+}
+
+.userinputs input[type="text"]:focus,
+.userinputs input[type="password"]:focus {
+    background-color: #e0e0e0; 
+}
+
+.userinputs button {
+    background-color: #4caf50; 
+    color: white; 
+    cursor: pointer;
+}
+
+.userinputs button:hover {
+    background-color: #45a049; 
+    transform: translateY(-2px); 
+}
+
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
