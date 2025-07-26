@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Beans</title>
+  <link rel="stylesheet" href="vegs.css">
+</head>
+<body>
+
+  <!-- Header -->
+  <div class="header">
+    <div class="container">
+      <div class="navbar">
+        <div class="logo">
+          
+        </div>
+        <nav>
+          <ul>
+            <li><a href="home.html">Home</a></li>
+            <li><a href="categories.html">Categories</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="index.html">Account</a></li>
+          </ul>
+        </nav>
+        <a href="cart.html"><img src="img/cart 2.png" width="30px" height="30px"></a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Product Section -->
+  <div class="product-section">
+    <div class="image-container">
+      <img src="img/brinjal.jpeg" alt="Brinjal" class="product-image" style="width: 30%; height: 330px;">
+    </div>
+
+    <div class="center-text">
+      <h1>Brinjal</h1>
+      <p>1 kg (Approx 6 - 7 pcs)</p>
+      <h4>$2.60</h4>
+    </div>
+
+    <div class="add-cart-container">
+      <div class="box" id="add-to-cart">Add To Cart</div>
+    </div>
+
+    <div class="pro">
+      <h2>Description</h2>
+    </div>
+    <div class="dis">
+      <p>Brinjal, also known as eggplant, is a versatile and nutrient-rich vegetable, packed with fiber, antioxidants, and essential vitamins. On Fresh Land, users can browse a selection of fresh brinjals, including varieties like long purple brinjal and round green brinjal. Each listing includes clear details about size, texture, and freshness, along with insights into their health benefits. The platform offers a smooth and reliable shopping experience, ensuring top-quality produce with fast and hassle-free delivery.</p>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="endbox">
+      <p>Visit Us Today!<br><br>
+        We invite you to explore our store, discover fresh flavors, and experience the GreenHarvest difference. Connect with us on social media, sign up for our newsletter, or simply visit our store to see what we have in store for you. We look forward to serving you.<br><br>
+        <strong>Hours and Locations:</strong> 9am to 11pm<br>
+        <strong>Store Addresses:</strong> Chennai<br><br>
+        <strong>Contact Information:</strong><br>
+        Phone: <a href="tel:+916383227337">6383227337</a><br>
+        Email: <a href="mailto:sanjaisaran006@gmail.com">sanjaisaran006@gmail.com</a>
+      </p>
+    </div>
+  </footer>
+
+  <!-- Add To Cart Script -->
+  <script>
+    document.getElementById("add-to-cart").addEventListener("click", function () {
+      const product = {
+        name: "Brinjal",
+        price: 2.40,
+        quantity: 1,
+        image: "img/brinjal.jpeg"
+      };
+
+      let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+      let existing = cart.find(item => item.name === product.name);
+
+      if (!existing) {
+        cart.push(product);
+      }
+
+      localStorage.setItem("cart", JSON.stringify(cart));
+      window.location.href = "cart.html";
+    });
+  </script>
+
+</body>
+</html>

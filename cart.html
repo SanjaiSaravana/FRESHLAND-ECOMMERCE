@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cart Page</title>
+  <link rel="stylesheet" href="cart.css" />
+</head>
+<body>
+
+  <!-- Header / Navbar -->
+  <div class="header">
+    <div class="container">
+      <div class="navbar">
+        <div class="logo"></div>
+        <nav>
+          <ul>
+            <li><a href="home.html">Home</a></li>
+            <li><a href="categories.html">Categories</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="index.html">Account</a></li>
+          </ul>
+        </nav>
+        <a href="cart.html"><img src="img/cart 2.png" width="30px" height="30px" /></a>
+      </div>
+    </div>
+  </div>
+
+  <h1 class="main-title">Your Cart</h1>
+
+  <!-- Delivery Row -->
+  <div class="delivery-row">
+    <img src="img/add.png" alt="Delivery" class="delivery-icon" />
+    <button onclick="toggleAddressForm()" class="update-btn">Update Delivery Location</button>
+  </div>
+
+  <!-- Delivery Info Display -->
+  <div id="delivery-info" class="delivery-info"></div>
+
+  <!-- Address Form -->
+  <div class="delivery-address" id="address-form-section" style="display: none;">
+    <form id="address-form" onsubmit="submitAddress(event)">
+      <label for="name">Full Name</label>
+      <input type="text" id="name" required />
+
+      <label for="phone">Phone Number</label>
+      <input type="tel" id="phone" required />
+
+      <label for="house">House Number</label>
+      <input type="text" id="house" required />
+
+      <label for="landmark">Landmark</label>
+      <input type="text" id="landmark" />
+
+      <label for="place">Place</label>
+      <input type="text" id="place" required />
+
+      <label>Address Label</label>
+      <div class="address-labels">
+        <label><input type="radio" name="label" value="Home" checked /> Home</label>
+        <label><input type="radio" name="label" value="Office" /> Office</label>
+        <label><input type="radio" name="label" value="Other" /> Other</label>
+      </div>
+
+      <label for="pincode">Pincode</label>
+      <input type="text" id="pincode" required maxlength="6" pattern="\d{6}" />
+
+      <button type="submit" class="submit-address">Submit Address</button>
+    </form>
+  </div>
+
+  <!-- Success Message -->
+  <div id="confirmation-msg" class="confirmation-msg" style="display: none;">
+    ✅ Delivery address submitted successfully!
+  </div>
+
+  <!-- Cart Box -->
+  <div class="cart-box">
+    <div id="cart-items"></div>
+    <div class="total-payment">
+      <div class="total-amount" id="total">Total: $0.00</div>
+      <button class="pay-button" onclick="checkout()">Proceed to Payment</button>
+    </div>
+  </div>
+
+  <!-- JavaScript -->
+  <script>
+    function toggleAddressForm() {
+      const form = document.getElementById("address-form-section");
+      form.style.display = form.style.display === "none" ? "block" : "none";
+    }
+
+    function submitAddress(e) {
+      e.preventDefault();
+
+      const name = document.getElementById("name").value.trim();
+      const phone = document.getElementById("phone").value.trim();
+      const house = document.getElementById("house").value.trim();
+      const landmark = document.getElementById("landmark").value.trim();
+      const place = document.getElementById("place").value.trim();
+      const pincode = document.getElementById("pincode").value.trim();
+      const label = document.querySelector("input[name='label']:checked").value;
+
+      // Validate pincode
+      const pinRegex = /^\d{6}$/;
+      if (!pinRegex.test(pincode)) {
+        alert("Please enter a valid 6-digit pincode.");
+        return;
+      }
+
+      const display = `
+        <p><strong>Deliver To:</strong> ${name}, ${phone}</p>
+        <p><strong>Address:</strong> ${house}, ${landmark}, ${place}, Pincode: ${pincode}</p>
+        <p><strong>Label:</strong> ${label}</p>
+      `;
+      document.getElementById("delivery-info").innerHTML = display;
+      document.getElementById("address-form-section").style.display = "none";
+
+      const confirmation = document.getElementById("confirmation-msg");
+      confirmation.style.display = "block";
+      setTimeout(() => confirmation.style.display = "none", 3000);
+    }
+
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+    const cartContainer = document.getElementById("cart-items");
+    const totalElement = document.getElementById("total");
+
+    function updateCartDisplay() {
+      cartContainer.innerHTML = "";
+      let total = 0;
+
+      if (cart.length === 0) {
+        cartContainer.innerHTML = "<p>Your cart is empty.</p>";
+        totalElement.textContent = "Total: $0.00";
+        return;
+      }
+
+      cart.forEach((item, index) => {
+        const itemTotal = item.price * item.quantity;
+        total += itemTotal;
+
+        const itemDiv = document.createElement("div");
+        itemDiv.className = "cart-item";
+        itemDiv.innerHTML = `
+          <div class="cart-info">
+            <img src="${item.image}" alt="${item.name}" />
+            <div>
+              <h3>${item.name}</h3>
+              <p>Price: $${item.price.toFixed(2)}</p>
+              <p>Total: $${itemTotal.toFixed(2)}</p>
+            </div>
+          </div>
+          <div class="cart-actions">
+            <button onclick="changeQuantity(${index}, -1)">-</button>
+            <span>${item.quantity}</span>
+            <button onclick="changeQuantity(${index}, 1)">+</button>
+          </div>
+        `;
+        cartContainer.appendChild(itemDiv);
+      });
+
+      totalElement.textContent = `Total: $${total.toFixed(2)}`;
+      localStorage.setItem("cart", JSON.stringify(cart));
+    }
+
+    function changeQuantity(index, delta) {
+      cart[index].quantity += delta;
+      if (cart[index].quantity <= 0) {
+        cart.splice(index, 1);
+      }
+      updateCartDisplay();
+    }
+
+    function checkout() {
+      alert("Redirecting to payment gateway...");
+    }
+
+    updateCartDisplay();
+  </script>
+</body>
+</html>
