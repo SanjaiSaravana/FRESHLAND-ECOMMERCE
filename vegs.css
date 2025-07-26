@@ -1,0 +1,142 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    background-color: #4caf50;
+}
+
+nav {
+    flex: 1;
+    text-align: right;
+}
+
+nav ul {
+    list-style-type: none;
+}
+
+nav ul li {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+.container {
+    max-width: 1300px;
+    margin: auto;
+}
+
+/* Footer */
+footer {
+    background-color: #ededed;
+    color: black;
+    text-align: center;
+    padding: 20px 0;
+    animation: slideInUp 1s ease-out;
+}
+
+.endbox {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Product Section */
+.product-section {
+    padding: 4px 6px;
+}
+
+/* Image center */
+.image-container {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.product-image {
+    width: 300px;
+    height: auto;
+    border-radius: 1px;
+}
+
+/* Center text for product info */
+.center-text {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.center-text h1,
+.center-text p,
+.center-text h4 {
+    margin: 10px 0;
+}
+
+/* Cart button aligned to right using flex */
+.add-cart-container {
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 60px;
+    margin-bottom: 30px;
+}
+
+.box {
+    width: 150px;
+    height: 50px;
+    border: 1px solid black;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    text-align: center;
+    line-height: 30px;
+    font-size: 18px;
+    border-radius: 5px;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.box:hover {
+    background-color: #37843b;
+}
+
+/* Description styling */
+.pro {
+    margin-left: 20px;
+    margin-bottom: 5px;
+}
+
+.dis {
+    margin-left: 40px;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .product-image {
+        width: 100%;
+        max-width: 300px;
+    }
+
+    .add-cart-container {
+        justify-content: center;
+        padding-right: 0;
+    }
+
+    .box {
+        width: 100%;
+        max-width: 200px;
+    }
+
+    .dis, .pro {
+        margin-left: 20px;
+    }
+}

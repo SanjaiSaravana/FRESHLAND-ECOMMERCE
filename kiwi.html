@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kiwi</title>
+  <link rel="stylesheet" href="mango.css" />
+</head>
+<body>
+
+  <div class="header">
+    <div class="container">
+      <div class="navbar">
+        <nav>
+          <ul>
+            <li><a href="home.html">Home</a></li>
+            <li><a href="categories.html">Categories</a></li>
+            <li><a href="About.html">About</a></li>
+            <li><a href="index.html">Account</a></li>
+          </ul>
+        </nav>
+        <a href="cart.html"><img src="img/cart 2.png" width="30px" height="30px" alt="Cart" /></a>
+      </div>
+    </div>
+  </div>
+
+  <div class="small-containers">
+    <div class="row">
+      <div class="col-2">
+        <center><img src="img/kiwi.jpg" width="300px" height="250px" alt="Kiwi" /></center>
+      </div>
+      <div class="col-2">
+        <center>
+          <h1>Kiwi</h1>
+          <p>1 kg (Approx 9 - 11 pcs)</p>
+          <h4>$2.90</h4>
+        </center>
+
+        <div class="add-cart-container">
+      <div class="box" id="add-to-cart">Add To Cart</div>
+    </div>
+
+        <div class="pro">
+          <h2>Description</h2>
+        </div>
+        <div class="dis">
+          <p>Kiwi is a small, nutrient-dense fruit with a fuzzy brown skin and bright green flesh, known for its sweet-tart flavor and tiny edible seeds. Native to China, kiwi is now widely cultivated in countries like New Zealand and Italy. It is rich in vitamin C, fiber, and antioxidants, making it a popular choice for both fresh consumption and use in smoothies, salads, and desserts.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="endbox">
+      <p>
+        Visit Us Today!<br><br>
+        We invite you to explore our store, discover fresh flavors, and experience the GreenHarvest difference. Connect with us on social media, sign up for our newsletter, or simply visit our store to see what we have in store for you. We look forward to serving you.<br><br>
+        <strong>Hours and Locations:</strong> 9am to 11pm<br>
+        <strong>Store Addresses:</strong> Chennai<br><br>
+        <strong>Contact Information:</strong><br>
+        Phone: <a href="tel:+916383227337">6383227337</a><br>
+        Email: <a href="mailto:sanjaisaran006@gmail.com">sanjaisaran006@gmail.com</a>
+      </p>
+    </div>
+  </footer>
+
+  <!-- Add To Cart Script -->
+  <script>
+    document.getElementById("add-to-cart").addEventListener("click", function () {
+      const product = {
+        name: "Kiwi",
+        price: 2.90,
+        quantity: 1,
+        image: "img/kiwi.jpg"
+      };
+
+      let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+      const found = cart.find(item => item.name === product.name);
+      if (!found) {
+        cart.push(product);
+      }
+
+      localStorage.setItem("cart", JSON.stringify(cart));
+      window.location.href = "cart.html";
+    });
+  </script>
+
+</body>
+</html>

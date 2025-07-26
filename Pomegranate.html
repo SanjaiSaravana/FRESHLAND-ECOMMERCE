@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pomegranate</title>
+  <link rel="stylesheet" href="mango.css">
+</head>
+<body>
+
+  <!-- Header -->
+  <div class="header">
+    <div class="container">
+      <div class="navbar">
+        <div class="logo">
+        </div>
+        <nav>
+          <ul>
+            <li><a href="home.html">Home</a></li>
+            <li><a href="categories.html">Categories</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="index.html">Account</a></li>
+          </ul>
+        </nav>
+        <a href="cart.html"><img src="img/cart 2.png" width="30px" height="30px"></a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Product Section -->
+  <div class="product-section">
+    <div class="image-container">
+      <img src="img/po.webp" alt="Pomegranate" class="product-image" style="height: 330px; width: 30%;">
+    </div>
+
+    <div class="center-text">
+      <h1>Pomegranate</h1>
+      <p>1 kg (Approx 3 - 5 pcs)</p>
+      <h4>$1.50</h4>
+    </div>
+
+    <div class="add-cart-container">
+      <div class="box" id="add-to-cart">Add To Cart</div>
+    </div>
+
+    <div class="pro">
+      <h2>Description</h2>
+    </div>
+    <div class="dis">
+      <p>Pomegranate is a nutrient-rich fruit with a thick, leathery red skin and a cluster of juicy, jewel-like seeds called arils inside. Native to the Middle East, it is now grown in many warm climates around the world. Pomegranates are high in antioxidants, vitamins C and K, and are prized for their sweet-tart flavor, commonly used in juices, salads, sauces, and desserts.</p>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="endbox">
+      <p>Visit Us Today!<br><br>
+        We invite you to explore our store, discover fresh flavors, and experience the GreenHarvest difference. Connect with us on social media, sign up for our newsletter, or simply visit our store to see what we have in store for you. We look forward to serving you.<br><br>
+        <strong>Hours and Locations:</strong> 9am to 11pm<br>
+        <strong>Store Addresses:</strong> Chennai<br><br>
+        <strong>Contact Information:</strong><br>
+        Phone: <a href="tel:+916383227337">6383227337</a><br>
+        Email: <a href="mailto:sanjaisaran006@gmail.com">sanjaisaran006@gmail.com</a>
+      </p>
+    </div>
+  </footer>
+
+  <!-- Add To Cart Script -->
+  <script>
+    document.getElementById("add-to-cart").addEventListener("click", function () {
+      const product = {
+        name: "Pomegranate",
+        price: 1.50,
+        quantity: 1,
+        image: "img/po.webp"
+      };
+
+      let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+      let existing = cart.find(item => item.name === product.name);
+
+      if (!existing) {
+        cart.push(product);
+      }
+
+      localStorage.setItem("cart", JSON.stringify(cart));
+      window.location.href = "cart.html";
+    });
+  </script>
+
+</body>
+</html>

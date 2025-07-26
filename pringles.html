@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Pringles</title>
+  <link rel="stylesheet" href="banana.css">
+</head>
+<body>
+
+  <!-- Header -->
+  <div class="header">
+    <div class="container">
+      <div class="navbar">
+        <div class="logo">
+          
+        </div>
+        <nav>
+          <ul>
+            <li><a href="home.html">Home</a></li>
+            <li><a href="categories.html">Categories</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="index.html">Account</a></li>
+          </ul>
+        </nav>
+        <a href="cart.html"><img src="img/cart 2.png" width="30px" height="30px"></a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Product Content -->
+  <div class="product-section">
+    <div class="image-container">
+      <img src="img/pringles.jpg" alt="Pringles" class="product-image">
+    </div>
+    <div class="details-container center-text">
+      <h1>Pringles</h1>
+    
+      <h4>$2.60</h4>
+    </div>
+
+    <div class="add-cart-container">
+      <div class="box" id="add-to-cart">Add To Cart</div>
+    </div>
+
+    <div class="pro">
+      <h2>Description</h2>
+    </div>
+    <div class="dis">
+      <p>Pringles is a popular brand of potato-based crisps known for their uniform, curved shape and crisp texture. Unlike traditional chips, Pringles are made from a dough-like mixture of dehydrated potatoes, shaped and stacked neatly in a cylindrical can for convenience and freshness. Available in a variety of flavors such as Original, Sour Cream & Onion, and Barbecue, Pringles offer a bold, satisfying crunch with every bite. They are a favorite snack around the world, perfect for sharing or enjoying solo.</p>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="endbox">
+      <p>Visit Us Today!<br><br>
+        We invite you to explore our store, discover fresh flavors, and experience the GreenHarvest difference. Connect with us on social media, sign up for our newsletter, or simply visit our store to see what we have in store for you. We look forward to serving you.<br><br>
+        <strong>Hours and Locations:</strong> 9am to 11pm<br>
+        <strong>Store Addresses:</strong> Chennai<br><br>
+        <strong>Contact Information:</strong><br>
+        Phone: <a href="tel:+916383227337">6383227337</a><br>
+        Email: <a href="mailto:sanjaisaran006@gmail.com">sanjaisaran006@gmail.com</a>
+      </p>
+    </div>
+  </footer>
+
+  <!-- Add to Cart Script -->
+  <script>
+    document.getElementById("add-to-cart").addEventListener("click", function () {
+      const product = {
+        name: "Pringles",
+        price: 2.60,
+        quantity: 1,
+        image: "img/pringles.jpg"
+      };
+
+      let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+      let existing = cart.find(item => item.name === product.name);
+
+      if (!existing) {
+        cart.push(product);
+      }
+
+      localStorage.setItem("cart", JSON.stringify(cart));
+      window.location.href = "cart.html";
+    });
+  </script>
+
+</body>
+</html>

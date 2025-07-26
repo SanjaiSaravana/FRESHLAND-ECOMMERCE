@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tomato</title>
+  <link rel="stylesheet" href="vegs.css">
+</head>
+<body>
+
+  <!-- Header -->
+  <div class="header">
+    <div class="container">
+      <div class="navbar">
+        <div class="logo"></div>
+        <nav>
+          <ul>
+            <li><a href="home.html">Home</a></li>
+            <li><a href="categories.html">Categories</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="index.html">Account</a></li>
+          </ul>
+        </nav>
+        <a href="cart.html"><img src="img/cart 2.png" width="30px" height="30px"></a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Product Section -->
+  <div class="product-section">
+    <div class="image-container">
+      <img src="img/tomato.jpeg" alt="Tomato" class="product-image" style="height: 330px; width: 30%;">
+    </div>
+
+    <div class="center-text">
+      <h1>Tomato</h1>
+      <p>1 kg (Approx 13 - 18 pcs)</p>
+      <h4>$1.90</h4>
+    </div>
+
+    <div class="add-cart-container">
+      <div class="box" id="add-to-cart">Add To Cart</div>
+    </div>
+
+    <div class="pro">
+      <h2>Description</h2>
+    </div>
+    <div class="dis">
+      <p>Tomatoes are vibrant, juicy fruits often used in cooking for their sweet and tangy flavor. On 'Fresh Land,' customers can explore a variety of fresh tomatoes, including cherry, Roma, and heirloom, with detailed descriptions on size, price, and ripeness. The platform ensures easy selection and fast delivery, providing users with high-quality produce for their cooking needs.</p>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="endbox">
+      <p>Visit Us Today!<br><br>
+        We invite you to explore our store, discover fresh flavors, and experience the GreenHarvest difference. Connect with us on social media, sign up for our newsletter, or simply visit our store to see what we have in store for you. We look forward to serving you.<br><br>
+        <strong>Hours and Locations:</strong> 9am to 11pm<br>
+        <strong>Store Addresses:</strong> Chennai<br><br>
+        <strong>Contact Information:</strong><br>
+        Phone: <a href="tel:+916383227337">6383227337</a><br>
+        Email: <a href="mailto:sanjaisaran006@gmail.com">sanjaisaran006@gmail.com</a>
+      </p>
+    </div>
+  </footer>
+
+  <!-- Add To Cart Script -->
+  <script>
+    document.getElementById("add-to-cart").addEventListener("click", function () {
+      const product = {
+        name: "Tomato",
+        price: 1.90,
+        quantity: 1,
+        image: "img/tomato.jpeg"
+      };
+
+      let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+      let existing = cart.find(item => item.name === product.name);
+
+      if (!existing) {
+        cart.push(product);
+      }
+
+      localStorage.setItem("cart", JSON.stringify(cart));
+      window.location.href = "cart.html";
+    });
+  </script>
+
+</body>
+</html>

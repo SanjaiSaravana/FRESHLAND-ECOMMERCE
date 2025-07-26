@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pineapple</title>
+  <link rel="stylesheet" href="guava.css">
+</head>
+<body>
+
+  <!-- Header -->
+  <div class="header">
+    <div class="container">
+      <div class="navbar">
+        <div class="logo">
+        </div>
+        <nav>
+          <ul>
+            <li><a href="home.html">Home</a></li>
+            <li><a href="categories.html">Categories</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="index.html">Account</a></li>
+          </ul>
+        </nav>
+        <a href="cart.html"><img src="img/cart 2.png" width="30px" height="30px"></a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Product Section -->
+  <div class="product-section">
+    <div class="image-container">
+      <img src="img/pine.png" alt="Pineapple" class="product-image" style="height: 330px; width: 30%;">
+    </div>
+
+    <div class="center-text">
+      <h1>Pineapple</h1>
+      <p>1 kg (Approx 1 - 3 pcs)</p>
+      <h4>$2.00</h4>
+    </div>
+
+    <div class="add-cart-container">
+      <div class="box" id="add-to-cart">Add To Cart</div>
+    </div>
+
+    <div class="pro">
+      <h2>Description</h2>
+    </div>
+    <div class="dis">
+      <p>Pineapple is a tropical fruit with a spiky, rough exterior and sweet, tangy yellow flesh. Native to South America, it is now grown in tropical regions worldwide. Rich in vitamins C and B6, pineapple is enjoyed fresh or used in juices, desserts, and savory dishes for its refreshing taste and health benefits.</p>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="endbox">
+      <p>Visit Us Today!<br><br>
+        We invite you to explore our store, discover fresh flavors, and experience the GreenHarvest difference. Connect with us on social media, sign up for our newsletter, or simply visit our store to see what we have in store for you. We look forward to serving you.<br><br>
+        <strong>Hours and Locations:</strong> 9am to 11pm<br>
+        <strong>Store Addresses:</strong> Chennai<br><br>
+        <strong>Contact Information:</strong><br>
+        Phone: <a href="tel:+916383227337">6383227337</a><br>
+        Email: <a href="mailto:sanjaisaran006@gmail.com">sanjaisaran006@gmail.com</a>
+      </p>
+    </div>
+  </footer>
+
+  <!-- Add To Cart Script -->
+  <script>
+    document.getElementById("add-to-cart").addEventListener("click", function () {
+      const product = {
+        name: "Pineapple",
+        price: 2.00,
+        quantity: 1,
+        image: "img/pine.png"
+      };
+
+      let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+      let existing = cart.find(item => item.name === product.name);
+
+      if (!existing) {
+        cart.push(product);
+      }
+
+      localStorage.setItem("cart", JSON.stringify(cart));
+      window.location.href = "cart.html";
+    });
+  </script>
+
+</body>
+</html>

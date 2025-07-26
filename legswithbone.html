@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chicken Legs With Bone</title>
+  <link rel="stylesheet" href="banana.css" />
+</head>
+<body>
+
+  <div class="header">
+    <div class="container">
+      <div class="navbar">
+        <nav>
+          <ul>
+            <li><a href="home.html">Home</a></li>
+            <li><a href="categories.html">Categories</a></li>
+            <li><a href="About.html">About</a></li>
+            <li><a href="index.html">Account</a></li>
+          </ul>
+        </nav>
+        <a href="cart.html"><img src="img/cart 2.png" width="30px" height="30px" alt="Cart" /></a>
+      </div>
+    </div>
+  </div>
+
+  <div class="small-containers">
+    <div class="row">
+       <div class="image-container">
+      <img src="img/chicken leg.jpg" alt="Chicken Legs With Bone" class="product-image" width="300px" height="250px">
+    </div>
+
+       <div class="center-text">
+      <h1>Chicken Legs With Bone</h1>
+      <p>1 kg (6 pcs)</p>
+      <h4>$3.00</h4>
+    </div>
+
+         <div class="add-cart-container">
+      <div class="box" id="add-to-cart">Add To Cart</div>
+    </div>
+        <div class="pro">
+          <h2>Description</h2>
+        </div>
+        <div class="dis">
+          <p>Chicken leg with bone is a tender and flavorful cut of poultry that includes the drumstick and thigh, held together by the bone. With its juicy meat and rich taste, it's a favorite in many cuisines around the world. Often roasted, grilled, fried, or stewed, the bone helps retain moisture and enhances the depth of flavor during cooking. Chicken legs are a good source of protein, B vitamins, and essential minerals like zinc and iron, making them both nutritious and satisfying.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="endbox">
+      <p>
+        Visit Us Today!<br><br>
+        We invite you to explore our store, discover fresh flavors, and experience the GreenHarvest difference. Connect with us on social media, sign up for our newsletter, or simply visit our store to see what we have in store for you. We look forward to serving you.<br><br>
+        <strong>Hours and Locations:</strong> 9am to 11pm<br>
+        <strong>Store Addresses:</strong> Chennai<br><br>
+        <strong>Contact Information:</strong><br>
+        Phone: <a href="tel:+916383227337">6383227337</a><br>
+        Email: <a href="mailto:sanjaisaran006@gmail.com">sanjaisaran006@gmail.com</a>
+      </p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("add-to-cart").addEventListener("click", function () {
+      const product = {
+        name: "Chicken Legs With Bone",
+        price: 3.00,
+        quantity: 1,
+        image: "img/chicken leg.jpg"
+      };
+
+      let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+      const found = cart.find(item => item.name === product.name);
+      if (!found) {
+        cart.push(product);
+      }
+
+      localStorage.setItem("cart", JSON.stringify(cart));
+      window.location.href = "cart.html";
+    });
+  </script>
+
+</body>
+</html>

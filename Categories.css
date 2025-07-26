@@ -1,0 +1,160 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+.navbar{
+display: flex;
+    align-items: center;
+    padding: 18px;
+    background-color: #4caf50;
+}
+nav{
+    flex: 1;
+    text-align: right;
+}
+nav ul{
+    display: inline-block;
+    list-style-type: none;
+}
+nav li{
+    display: inline-block;
+    margin-right: 20px;
+}
+a{
+    text-decoration: none;
+    color: black;
+}
+
+.container{
+    max-width: 1300px;
+    margin: auto;
+    }
+.row{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+    font-size: 30px;
+}
+
+.fruit {
+    display: inline-block; /* Not inline block with space */
+}
+
+
+.fruit h3{
+    font-size: 30px;
+    line-height: 40px;
+    margin-left: 50px;
+}
+.veg{
+    right: 500px;
+}
+.veg h3{
+    font-size: 30px;
+    line-height: 40px;
+
+    margin-left: 50px;
+
+}
+.all{
+    flex-basis: 25%;
+    padding: 10px;
+    min-width: 200px;
+    margin-bottom: 50px;
+}
+.all img{
+    width: 25%;
+}
+.small-containers{
+    margin-right: 1000px;
+    margin: auto;
+    padding-left: 25px;
+    padding-right: 25px;
+}
+h4{
+    color: black;
+    font-weight: normal;
+}
+.col-4 p{
+    font-size: 14px;
+}
+footer {
+    background-color: #ededed; 
+    color: rgb(37, 34, 34); 
+    text-align: center;
+    padding: 20px 0;
+    animation: slideInUp 1s ease-out;
+}
+
+.endbox {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+
+a {
+    color: rgb(7, 7, 7); 
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+.items-row {
+    display: flex;
+    justify-content: center;
+    gap: 50px; /* Space between fruit and vegetable */
+    margin-top: 20px;
+}
+
+.fruit, .veg {
+    text-align: center;
+}
+
+.all img {
+    width: 200px; /* or any size you want */
+    height: auto;
+}
+.items-row {
+    display: flex;
+    justify-content: space-around; /* Space between items */
+    flex-wrap: wrap; /* Responsive wrap */
+    gap: 30px; /* Space between items */
+    margin-top: 30px;
+}
+
+.all {
+    text-align: center;
+    flex-basis: 20%; /* Equal width for all items */
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+
+
+.all h3 {
+    font-size: 20px;
+    margin-top: 10px;
+    color: black;
+}
+.all img:hover {
+    transform: scale(1.05);
+    transition: 0.3s;
+}
+
+.all img {
+    width: 200px;  /* bigger width */
+    height: 200px;  /* height adjusts automatically */
+    object-fit: contain;
+    border-radius: 10px; /* optional: soft corners */
+}
+
+.all h3 {
+    font-size: 24px;
+    margin-top: 15px;
+    color: black;
+}
